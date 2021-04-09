@@ -7,7 +7,7 @@ public:
     FirstNRepeatingStream(int N);
     std::optional<char> next(char c);
 
-// private: TODO: atata
+private:  // dbg
     int N;
     int state_zero_N;
     bool state_zero;
@@ -69,7 +69,7 @@ int main(){
     while(std::cin >> c){
         first_c = fnrs.next(c);
         if (first_c != std::nullopt)
-            std::cout << c << " --> " << first_c.value() << "   N: " << fnrs.N << " | lead_c: " << fnrs.lead_c << " | slave_c: " << fnrs.slave_c << " | slave_N: " << fnrs.slave_N << std::endl;
+            std::cout << c << " --> " << first_c.value();  // << "   N: " << fnrs.N << " | lead_c: " << fnrs.lead_c << " | slave_c: " << fnrs.slave_c << " | slave_N: " << fnrs.slave_N << std::endl;  // dbg
     }
     return 0;
 }
